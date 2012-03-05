@@ -1,0 +1,16 @@
+sfAssetFolder:
+  media:
+    tree_left:     1
+    tree_right:    6
+    name:          media
+    relative_path: media
+  subdir1:
+    tree_left:     2
+    tree_right:    3
+    name:          TESTsubdir1
+    relative_path: media/TESTsubdir1
+  subdir2:
+    tree_left:     4
+    tree_right:    5
+    name:          TESTsubdir2
+    relative_path: media/TESTsubdir2

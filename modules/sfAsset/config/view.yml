@@ -1,0 +1,8 @@
+all:
+  stylesheets: [%SF_ADMIN_WEB_DIR%/css/main, /sfAssetsLibraryPlugin/css/media]
+
+listSuccess:
+  javascripts: [/sfAssetsLibraryPlugin/js/popup]
+
+searchSuccess:
+  javascripts: [/sfAssetsLibraryPlugin/js/popup]

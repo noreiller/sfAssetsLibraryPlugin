@@ -1,0 +1,30 @@
+package: plugins.sfAssetsLibraryPlugin.lib.model
+
+classes:
+  
+  sfAssetFolder:
+    treeMode: NestedSet
+    columns:
+      id:            ~
+      tree_left:     { type: integer, required: true, default: 0, nestedSetLeftKey: true }
+      tree_right:    { type: integer, required: true, default: 0, nestedSetRightKey: true }
+      name:          { type: varchar, required: true }
+      relative_path: { type: varchar, primaryString: true }
+      created_at:    ~
+      updated_at:    ~
+    uniques:
+      uk_relative_path: [ relative_path ]
+
+  sfAsset:
+    columns:
+      id:          ~
+      folder_id:   { type: integer, required: true, fkPhpName: Folder, fkRefPhpName: Asset, foreignClass: sfAssetFolder, foreignReference: id, onDelete: cascade, onUpdate: cascade }
+      filename:    { type: varchar, required: true, primaryString: true }
+      description: { type: longvarchar }
+      author:      { type: varchar }
+      copyright:   { type: varchar(100) }
+      type:        { type: varchar(10) }
+      filesize:    { type: integer }
+      created_at:  ~
+    uniques:
+      uk_folder_filename: [ folder_id, filename ]
